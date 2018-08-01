@@ -22,6 +22,10 @@ export default {
     *changeTab({payload}, { call, put } ){
       yield put(routerRedux.push({ pathname: payload.tabName }))
     },
+    // *getTabName({payload}, {select}){
+    //   const tabName = yield select(state => state.store.tabName);
+    //   return tabName;
+    // },
     *query(){},
     *create(){},
     *'delete'(){},   // 因为delete是关键字，特殊处理
@@ -30,6 +34,13 @@ export default {
 
   // 替换状态树
   reducers: {
+    currentTabClick(state, action){ //积累tab点击信息
+      state.tabName = action.payload.tabName;
+      return state;
+    },
+    // getTabName(state, action){
+    //   return {...state};
+    // },
     showLoading(){}, // 控制加载状态的 reducer
     showModel(){}, // 控制 Model 显示状态的 reducer
     hideModel(){},
@@ -46,7 +57,9 @@ export default {
   },
   subscriptions: {
     setup({ dispatch, history }) {
-      // eslint-disable-line
-    },
+      history.listen((location) => {
+        console.log('重定向接收参数：%o', location)
+      });
+    }
   },
 }

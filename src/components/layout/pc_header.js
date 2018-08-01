@@ -18,7 +18,11 @@ class PCHeader extends React.Component {
         });
 
         //调用store中的方法
-        this.props.changeTab('/news/pages/'+e.key);
+        if(this.state.current != e.key){
+          this.props.changeTab('/news/pages/'+e.key);
+        }
+        this.props.currentTabClick(e.key);
+        console.log('getTabName', this.props.tabName);
     }
     render() {
         return (
@@ -48,15 +52,21 @@ class PCHeader extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    tabName: state.store.tabName,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     changeTab: (tabName) => {
       dispatch({type: 'store/changeTab', payload: { tabName: tabName }})
+    },
+    currentTabClick: (tabName) => {
+      dispatch({type: 'store/currentTabClick', payload: { tabName: tabName }})
+    },
+    getTabName: () => {
+      dispatch({type: 'store/getTabName'})
     }
   }
-}
+};
 // export default PCHeader;
 export default connect(mapStateToProps, mapDispatchToProps)(PCHeader);
