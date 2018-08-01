@@ -18,11 +18,9 @@ class PCHeader extends React.Component {
         });
 
         //调用store中的方法
-        if(this.state.current != e.key){
-          this.props.changeTab('/news/pages/'+e.key);
-        }
+        this.props.changeTab('/news/pages/'+e.key);
         this.props.currentTabClick(e.key);
-        console.log('getTabName', this.props.tabName);
+        // console.log('getTabName', this.props.tabName);
     }
     render() {
         return (
