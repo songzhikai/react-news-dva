@@ -58,7 +58,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       history.listen((location) => {
-        console.log('重定向接收参数：%o', location)
+        // console.log('重定向接收参数：%o', location)
       });
     }
   },
