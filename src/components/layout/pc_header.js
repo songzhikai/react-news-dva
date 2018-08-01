@@ -52,19 +52,19 @@ class PCHeader extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    tabName: state.store.tabName,
+    tabName: state.pageModel.tabName,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     changeTab: (tabName) => {
-      dispatch({type: 'store/changeTab', payload: { tabName: tabName }})
+      dispatch({type: 'pageModel/changeTab', payload: { tabName: tabName }})
     },
     currentTabClick: (tabName) => {
-      dispatch({type: 'store/currentTabClick', payload: { tabName: tabName }})
+      dispatch({type: 'pageModel/currentTabClick', payload: { tabName: tabName }})
     },
     getTabName: () => {
-      dispatch({type: 'store/getTabName'})
+      dispatch({type: 'pageModel/getTabName'})
     }
   }
 };

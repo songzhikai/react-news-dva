@@ -5,7 +5,7 @@
 import {routerRedux} from 'dva/router';;
 
 export default {
-  namespace: 'store',
+  namespace: 'pageModel',
   state: {
     list: [],
     total: null,
@@ -23,7 +23,7 @@ export default {
       yield put(routerRedux.push({ pathname: payload.tabName }))
     },
     // *getTabName({payload}, {select}){
-    //   const tabName = yield select(state => state.store.tabName);
+    //   const tabName = yield select(state => state.pageModel.tabName);
     //   return tabName;
     // },
     *query(){},
