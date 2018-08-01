@@ -140,7 +140,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     redirectToNewsDetail: (tabName) => {
-      dispatch({type: 'store/changeTab', payload: { tabName: tabName }})
+      dispatch({type: 'pageModel/changeTab', payload: { tabName: tabName }})
     }
   }
 }
