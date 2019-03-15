@@ -25,7 +25,7 @@ class PCHeader extends React.Component {
     render() {
         return (
             <Row>
-                <Col span={3}></Col>
+                <Col span={2}></Col>
                 <Col span={20}>
                     <Menu mode="horizontal" defaultSelectedKeys={[this.state.current]} selectedKeys={[this.state.current]} onClick={this.handleClick}>
                         <Menu.Item key="index">首页</Menu.Item>
@@ -42,7 +42,7 @@ class PCHeader extends React.Component {
                         <Menu.Item key="gongyi">公益</Menu.Item>
                     </Menu>
                 </Col>
-                <Col span={3}></Col>
+                <Col span={2}></Col>
             </Row>
         );
     }

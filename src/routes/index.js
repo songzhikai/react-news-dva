@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route, routerRedux, Redirect } from 'dva/router';
-import dynamic from 'dva/dynamic';
 import paths from './paths';
 import Layout from '../components/layout/layout';
 
